@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<Title>My Website | Contact </title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<nav>
+		<div class="nav-container">
+			<center>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="music.html">Music</a></li>
+					<li><a href="shoes.html">Shoes</a></li>
+					<li><a href="snowboarding.html">Snowboarding</a></li>
+					<li><a href="product.html">Shop Products</a></li>
+					<li><a class="active" href="Contact.html">Contact</a></li>
+				</ul>
+			</center>
+		</div>
+	</nav>
+
+	<div class="main-content-container">
+		<h1><b>Contact</b></h1>
+		<hr />
+		<p style="width: 90%; text-align: center;">Have an Idea or suggestion for my site? Want to work with me? Let me know! Send me a message using the form below and I'll get back to you as soon as possible!</p><br /><br />
+		<div class="container">
+			<form action="" method="get">
+				<label for="fname">First Name</label>
+				<input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+				<label for="lname">Last Name</label>
+				<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" placeholder="Your email..">
+
+				<label for="location">Location</label>
+				<select name="location" id="location">
+					<optgroup Name="Untied States" id="us" label="United States">
+						<option name="New York" id="newyork" value="New York">New York</option>
+						<option name="New Jersey" id="newjersey" value="New Jersey">New Jersey</option>
+						<option name="Connecticut" id="Connecticut" value="Connecticut">Connecticut</option>
+					</optgroup>
+					<optgroup name="gb" id="gb" label="Great Britain">
+						<option name= "london" id="london "value="London">London</option>
+						<option name="manchester" id="manchester" value="Manchester">Manchester</option>
+						<option name="Chelsea" id="Chelsea" value="Chelsea">Chelsea</option>
+					</optgroup>
+				</select>
+
+				<label for="Age">Age</label>
+				<input type="range" id="age" name="age" min="0" max="120" value="30" step="1" />
+				<br />
+				<br />
+				<label for="color">Favorite Color</label>
+				<input type="color" id="color" name="color" value="#e66465" />
+				<br />
+				<br />
+				<fieldset>
+					<legend>Credit Card Info:</legend>
+					<label for="cardType">Select Card Type</label>
+					<select name="SelectCard" id="cardType">
+	  					<option value="Mastercard">Mastercard</option>
+	  					<option value="Amex">Amex</option>
+	  					<option value="Visa">Visa</option>
+					</select>
+					<label>Credit or Debit</label><br />
+					<input type="radio" name="credit" id="debit" value="credit"> Credit<br>
+					<input type="radio" name="debit" id="debit" value="debit"> Debit<br>
+					<label for="cardname">Name on Card</label>
+					<input type="text" id="cardname" name="cardname" placeholder="Name on Card">
+					<label for="cardnum">Card Number</label>
+					<input type="number" id="cardnum" name="cardnum" min="0000000000000000" max="9999999999999999" placeholder="Enter your card number">
+					<label for="Expiration">Expiration Date</label>
+					<input type="date" id="expiration" name="expiration" value="2018-07-22" min="2018-09-16" max="2018-12-31" />
+					</br/><br />
+					<input type="checkbox" id="agreement" name="agreement" value="agree" />
+					<label for="agreement">I agree this is my credit card</label>
+
+				</fieldset>
+
+				<label for="subject">Message</label>
+				<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+				<label name="Newsletter" id="subscribelabel">Newsletter</label>
+				<button name="subscribebutton" id="subscribebutton"><a href=""</a>I would like to subscibe to weekly newsletters</button>
+				<hr />
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+	</div>
+
+
+	<div class="sidebar-container">
+		<center>
+			<h2> My Info: </h2>
+		</center>
+		<ul>
+			<li><b>Name:</b> Robert Taddeo</l1>
+				<li><b>Email: </b> rt1727@nyu.edu</l1>
+					<li><b>Address:</b> 55 East 10th Street, New York NY 10003</l1>
+		</ul>
+	</div>
+
+</body>
+
+</html>

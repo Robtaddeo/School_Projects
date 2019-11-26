@@ -1,0 +1,2 @@
+Bag: 600: This is a Louis Vuitton Bag that was made in Italy: 3
+Belt:450: This is a Gucci Belt that was hand made in France: 5

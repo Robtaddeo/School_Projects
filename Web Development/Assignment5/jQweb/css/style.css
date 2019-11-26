@@ -1,0 +1,41 @@
+body {
+  background-image: url("https://thumbor.forbes.com/thumbor/1280x868/https%3A%2F%2Fblogs-images.forbes.com%2Ftrulia%2Ffiles%2F2016%2F10%2Fnew-york-city-neighborhoods-093016-hero.jpg");
+  background-position: center bottom;
+	background-attachment: fixed;
+	background-size: cover;
+  font-family: 'Noto Sans SC', sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+  display: inline;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+  margin: 10px;
+}
+
+li a:hover {
+  text-decoration: none;
+  color: red;
+  margin: 10px;
+}
+
+section {
+  width: 400px;
+  margin: auto;
+  margin-top: 200px;
+}
+
+p {
+  background-color: white;
+}

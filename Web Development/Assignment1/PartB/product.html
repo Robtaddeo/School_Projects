@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<Title>My Website | Shop </title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/asg4cart.js" charset="utf-8"></script>
+</head>
+
+<body>
+	<nav>
+		<div class="nav-container">
+			<center>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="music.html">Music</a></li>
+					<li><a href="shoes.html">Shoes</a></li>
+					<li><a href="snowboarding.html">Snowboarding</a></li>
+          <li><a class="active" href="product.html">Shop Products</a></li>
+					<li><a href="Contact.html">Contact</a></li>
+				</ul>
+			</center>
+		</div>
+
+	</nav>
+
+	<div class="main-content-container">
+		<h1><b>Shop</b></h1>
+		<hr />
+		<h3 style="text-align: center;"> Take a look at some of the cool products we offer!</h3>
+    <br /><br />
+		<div class="main-content-flex">
+		<img src='https://images-na.ssl-images-amazon.com/images/I/610BP3Ef3uL._SX342_.jpg' height="300px" style="float: left; margin-right: 20px;">
+      <div class='article-link' style="float: right;">
+				<h2>Astroworld Sweatshirt</h2>
+				<p style="color: red;"><B>Price: $49.99</B></p>
+        <label>Quantity: </label><input id="astro-quantity" onchange="total()" value="1"/><br/><br />
+        <label>Sub-Total: </label><input id="astro-subtotal"  value="50"/>
+			</div>
+    </div>
+    <div class="main-content-flex">
+      <img src='https://cloud.melijoe.com/p/42f7b66e_1516674601_n_gucci_227927_A.jpg' height="300px" style="float: left; margin-right: 20px;">
+        <div class='article-link' style="float: right;">
+          <h2>Gucci T-Shirt</h2>
+          <p style="color: red;"><B>Price: $250</B></p>
+          <label>Quantity: </label><input id="gucci-quantity" onchange="total()" value="1"/><br/><br />
+          <label>Sub-Total: </label><input id="gucci-subtotal" value="250"/>
+        </div>
+    </div>
+      </div>
+
+	<div class="sidebar-container">
+			<h2>Shipping Info</h2>
+      <form action="" method="get">
+        <label for="fname">Total (With Tax)</label>
+        <input type="text" id="total" name="total" onchange="total()" value="">
+        <label for="fname">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name..">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email..">
+
+        <fieldset>
+          <legend>Credit Card Info:</legend>
+          <label for="cardType">Select Card Type</label>
+          <select name="SelectCard" id="cardType">
+              <option value="Mastercard">Mastercard</option>
+              <option value="Amex">Amex</option>
+              <option value="Visa">Visa</option>
+          </select>
+          <label>Credit or Debit</label><br />
+
+          <input type="radio" name="credit" id="credit" value="credit"> Credit<br>
+          <input type="radio" name="debit" id="debit" value="debit"> Debit<br>
+
+          <label for="cardname">Name on Card</label>
+          <input type="text" id="cardname" name="cardname" placeholder="Name on Card">
+          <label for="cardnum">Card Number</label>
+          <input type="number" id="cardnum" name="cardnum" min="0000000000000000" max="9999999999999999" placeholder="Enter your card number">
+          <label for="zip">Zip Code</label>
+          <input type="number" id="zip" name="zip" placeholder="Enter your zip code">
+          <label for="Expiration">Expiration Date</label>
+          <input type="date" id="expiration" name="expiration" value="2018-07-22" min="2018-09-16" max="2018-12-31" />
+          <br /><br />
+          <input type="checkbox" id="agreement" name="agreement" value="agree" />
+          <label for="agreement">I agree this is my credit card</label>
+
+        </fieldset>
+
+
+        <hr />
+        <input type="submit" id="formSubmit" value="Submit">
+        <input type="reset" onclick="reset()" id="reset" value="Reset" />
+      </form>
+
+	</div>
+
+</body>
+
+</html>

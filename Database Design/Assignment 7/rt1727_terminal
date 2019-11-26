@@ -1,0 +1,167 @@
+Last login: Tue Apr 23 01:35:00 on ttys005
+10-16-27-254:~ roberttaddeo$ ssh rt1727@i6.cims.nyu.edu
+Password: 
+Last failed login: Tue Apr 23 15:40:48 EDT 2019 from 10-16-75-247.dynapool.wireless.nyu.edu on ssh:notty
+There was 1 failed login attempt since the last successful login.
+Last login: Tue Apr 23 15:36:08 2019 from 10-16-75-247.dynapool.wireless.nyu.edu
+You are using 0% of your 2.0G quota for /home/rt1727.
+You are using 3% of your 1.0G quota for /web/rt1727.
+[rt1727@i6 ~]$ mysql -hwarehouse -p rt1727_db1
+Enter password: 
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4398070
+Server version: 5.1.73 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [rt1727_db1]> SELECT a.title, b.stageName FROM songs a INNER JOIN artists b ON a.artistID = b.ID;
++------------------------------------+---------------+
+| title                              | stageName     |
++------------------------------------+---------------+
+| Marvins Room                       | Drake         |
+| 20 Mins                            | Lil Uzi Vert  |
+| 20 Mins                            | Lil Uzi Vert  |
+| Sicko Mode                         | Travis Scott  |
+| Lucid Dreams                       | Juice WRLD    |
+| Fast                               | Juice WRLD    |
+| God's Plan                         | Rihanna       |
+| God's Plan                         | Rihanna       |
+| Thank you, Next                    | Ariana Grande |
+| Lemonade                           | Beyonce       |
+| Ronda                              | Lil Uzi Vert  |
+| Son Of Man                         | Phil Collins  |
+| Diamonds on the Soles of her Shoes | Paul Simon    |
+| I shot the Sheriff                 | Eric Clapton  |
++------------------------------------+---------------+
+14 rows in set (0.01 sec)
+
+MySQL [rt1727_db1]> SELECT a.title, b.stageName FROM albums a INNER JOIN artists b on a.artistID = b.ID;
++-----------------+---------------+
+| title           | stageName     |
++-----------------+---------------+
+| Astroworld      | Travis Scott  |
+| LUV IS RAGE 2   | Lil Uzi Vert  |
+| Take Care       | Drake         |
+| Tarzan          | Phil Collins  |
+| Lemonade        | Beyonce       |
+| Anti            | Rihanna       |
+| Graceland       | Paul Simon    |
+| Scorpion        | Drake         |
+| Dangerous Woman | Ariana Grande |
++-----------------+---------------+
+9 rows in set (0.01 sec)
+
+MySQL [rt1727_db1]> SELECT * FROM artists a LEFT JOIN songs b on a.ID = b.artistID;
++----+---------------+------------------------+---------------+-----+------+------------------------------------+--------------+-------------+----------+---------+
+| ID | stageName     | realName               | hometown      | age | ID   | title                              | yearReleased | genre       | artistID | albumID |
++----+---------------+------------------------+---------------+-----+------+------------------------------------+--------------+-------------+----------+---------+
+|  1 | Lil Uzi Vert  | Symere Woods           | Philadelphia  |  24 |    2 | 20 Mins                            | 2017         | Rap/Hip-Hop |        1 |       2 |
+|  1 | Lil Uzi Vert  | Symere Woods           | Philadelphia  |  24 |    2 | 20 Mins                            | 2017         | Rap/Hip-Hop |        1 |       2 |
+|  1 | Lil Uzi Vert  | Symere Woods           | Philadelphia  |  24 |   12 | Ronda                              | 2016         | Rap/Hip-Hop |        1 |    NULL |
+|  2 | Travis Scott  | Jacques Berman Webster | Houston       |  26 |    3 | Sicko Mode                         | 2018         | Rap/Hip-Hop |        2 |       1 |
+|  3 | Drake         | Aubrey Drake Graham    | Toronto       |  32 |    1 | Marvins Room                       | 2011         | Rap/Hip-Hop |        3 |       3 |
+|  4 | Juice WRLD    | Jarad Higgins          | Chicago       |  20 |    4 | Lucid Dreams                       | 2018         | Rap/Hip-Hop |        4 |    NULL |
+|  4 | Juice WRLD    | Jarad Higgins          | Chicago       |  20 |    5 | Fast                               | 2019         | Rap/Hip-Hop |        4 |    NULL |
+|  5 | Phil Collins  | Philip Collins         | Chiswick      |  68 |   13 | Son Of Man                         | 1999         | Rock        |        5 |       4 |
+|  6 | Eric Clapton  | Eric Clapton           | Ripley        |  74 |   15 | I shot the Sheriff                 | 1974         | Rock        |        6 |    NULL |
+|  7 | Paul Simon    | Paul Simon             | Newark        |  77 |   14 | Diamonds on the Soles of her Shoes | 1986         | Rock        |        7 |       8 |
+|  8 | Beyonce       | Beyonce Knowles        | Houston       |  37 |   10 | Lemonade                           | 2016         | Pop         |        8 |       5 |
+|  9 | Rihanna       | Robyn Rihanna Fenty    | Saint Michael |  31 |    6 | God's Plan                         | 2018         | Rap/Hip-Hop |        9 |       3 |
+|  9 | Rihanna       | Robyn Rihanna Fenty    | Saint Michael |  31 |    6 | God's Plan                         | 2018         | Rap/Hip-Hop |        9 |       3 |
+| 10 | Ariana Grande | Ariana Grande-Butera   | Boca Raton    |  25 |    9 | Thank you, Next                    | 2019         | Pop         |       10 |    NULL |
++----+---------------+------------------------+---------------+-----+------+------------------------------------+--------------+-------------+----------+---------+
+14 rows in set (0.00 sec)
+
+MySQL [rt1727_db1]> SELECT a.title, b.title FROM songs a LEFT JOIN albums b ON a.artistID = b.artistID WHERE b.title IS NOT NULL;
++------------------------------------+-----------------+
+| title                              | title           |
++------------------------------------+-----------------+
+| Marvins Room                       | Take Care       |
+| Marvins Room                       | Scorpion        |
+| 20 Mins                            | LUV IS RAGE 2   |
+| 20 Mins                            | LUV IS RAGE 2   |
+| Sicko Mode                         | Astroworld      |
+| God's Plan                         | Anti            |
+| God's Plan                         | Anti            |
+| Thank you, Next                    | Dangerous Woman |
+| Lemonade                           | Lemonade        |
+| Ronda                              | LUV IS RAGE 2   |
+| Son Of Man                         | Tarzan          |
+| Diamonds on the Soles of her Shoes | Graceland       |
++------------------------------------+-----------------+
+12 rows in set (0.00 sec)
+
+MySQL [rt1727_db1]> SELECT * FROM artists  WHERE age IN (SELECT age FROM artists WHERE hometown = "Houston");
++----+--------------+------------------------+----------+-----+
+| ID | stageName    | realName               | hometown | age |
++----+--------------+------------------------+----------+-----+
+|  2 | Travis Scott | Jacques Berman Webster | Houston  |  26 |
+|  8 | Beyonce      | Beyonce Knowles        | Houston  |  37 |
++----+--------------+------------------------+----------+-----+
+2 rows in set (0.00 sec)
+
+MySQL [rt1727_db1]> SELECT * FROM songs  WHERE genre IN (SELECT genre FROM songs WHERE yearReleased = 2016);
++----+-----------------+--------------+-------------+----------+---------+
+| ID | title           | yearReleased | genre       | artistID | albumID |
++----+-----------------+--------------+-------------+----------+---------+
+|  1 | Marvins Room    | 2011         | Rap/Hip-Hop |        3 |       3 |
+|  2 | 20 Mins         | 2017         | Rap/Hip-Hop |        1 |       2 |
+|  2 | 20 Mins         | 2017         | Rap/Hip-Hop |        1 |       2 |
+|  3 | Sicko Mode      | 2018         | Rap/Hip-Hop |        2 |       1 |
+|  4 | Lucid Dreams    | 2018         | Rap/Hip-Hop |        4 |    NULL |
+|  5 | Fast            | 2019         | Rap/Hip-Hop |        4 |    NULL |
+|  6 | God's Plan      | 2018         | Rap/Hip-Hop |        9 |       3 |
+|  6 | God's Plan      | 2018         | Rap/Hip-Hop |        9 |       3 |
+|  9 | Thank you, Next | 2019         | Pop         |       10 |    NULL |
+| 10 | Lemonade        | 2016         | Pop         |        8 |       5 |
+| 11 | Hips Don't Lie  | 2005         | Pop         |     NULL |    NULL |
+| 12 | Ronda           | 2016         | Rap/Hip-Hop |        1 |    NULL |
++----+-----------------+--------------+-------------+----------+---------+
+12 rows in set (0.00 sec)
+
+MySQL [rt1727_db1]> SELECT s.title, a.title, b.stageName FROM songs s INNER JOIN artists b on s.artistID = b.ID INNER JOIN albums a ON b.ID = a.artistID;
++------------------------------------+-----------------+---------------+
+| title                              | title           | stageName     |
++------------------------------------+-----------------+---------------+
+| Marvins Room                       | Take Care       | Drake         |
+| Marvins Room                       | Scorpion        | Drake         |
+| 20 Mins                            | LUV IS RAGE 2   | Lil Uzi Vert  |
+| 20 Mins                            | LUV IS RAGE 2   | Lil Uzi Vert  |
+| Sicko Mode                         | Astroworld      | Travis Scott  |
+| God's Plan                         | Anti            | Rihanna       |
+| God's Plan                         | Anti            | Rihanna       |
+| Thank you, Next                    | Dangerous Woman | Ariana Grande |
+| Lemonade                           | Lemonade        | Beyonce       |
+| Ronda                              | LUV IS RAGE 2   | Lil Uzi Vert  |
+| Son Of Man                         | Tarzan          | Phil Collins  |
+| Diamonds on the Soles of her Shoes | Graceland       | Paul Simon    |
++------------------------------------+-----------------+---------------+
+12 rows in set (0.00 sec)
+
+MySQL [rt1727_db1]> SELECT a.realName, b.title FROM artists a INNER JOIN songs b on a.ID = b.artistID;
++------------------------+------------------------------------+
+| realName               | title                              |
++------------------------+------------------------------------+
+| Aubrey Drake Graham    | Marvins Room                       |
+| Symere Woods           | 20 Mins                            |
+| Symere Woods           | 20 Mins                            |
+| Jacques Berman Webster | Sicko Mode                         |
+| Jarad Higgins          | Lucid Dreams                       |
+| Jarad Higgins          | Fast                               |
+| Robyn Rihanna Fenty    | God's Plan                         |
+| Robyn Rihanna Fenty    | God's Plan                         |
+| Ariana Grande-Butera   | Thank you, Next                    |
+| Beyonce Knowles        | Lemonade                           |
+| Symere Woods           | Ronda                              |
+| Philip Collins         | Son Of Man                         |
+| Paul Simon             | Diamonds on the Soles of her Shoes |
+| Eric Clapton           | I shot the Sheriff                 |
++------------------------+------------------------------------+
+14 rows in set (0.01 sec)
+
+MySQL [rt1727_db1]> 

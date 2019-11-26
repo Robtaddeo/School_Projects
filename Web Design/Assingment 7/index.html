@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="http://fonts.googleapis.com/css?family=Oswald:700|Droid+Serif:400,700italic" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+
+  <title>Peep</title>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #fff;">
+    <a class="navbar-brand" href="#">Peep</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+
+      <form method="post" attribute="post" action="php/search.php">
+        <input type="text" id="search-input" name="search">
+        <button type="submit" class="btn btn-outline-dark" name="login" id="search-btn" value="login">Search</button>
+      </form>
+
+    </div>
+  </nav>
+  <!-- End of Navbar -->
+
+  <!-- Main content -->
+
+  <div class="container" id="main-content">
+    <h1 style="color: black;">Shop for the best designer clothes, for the best price</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus posuere risus ut velit semper tempus. Morbi id convallis urna, at congue purus. Pellentesque pulvinar non ipsum a vehicula.
+      <p>
+        <hr />
+
+        <!-- Start Signup -->
+        <div class="container" style="min-width: 90%;">
+          <div class="row" id="userInfoDiv">
+            <div class="col-md-6">
+              <center>
+                  <h1>Register</h1>
+                  <form method="post" attribute="post" action="php/signup.php">
+                    <p>Enter Username:
+                    <input type="post" id="register-username" name="register-username"></p>
+                    <p>Enter Password:
+                    <input type="password" id="register-password" name="register-password"></p>
+                    <button type="submit" class="btn btn-outline-dark" name="register" id="register" value="answer">Sign Up</button>
+                  </form>
+              </center>
+            </div>
+
+
+            <div class="col-md-6">
+              <center>
+                <h1>Log In</h1>
+                <form method="post" attribute="post" action="php/login.php">
+                  <p>Enter Username:
+                  <input type="text" id="login-username" name="login-username"></p>
+                  <p>Enter Password:
+                  <input type="password" id="password" name="login-password"></p>
+                  <button type="submit" class="btn btn-outline-dark" name="login" id="login-btn" value="login">Log In</button>
+                </form>
+              </center>
+            </div>
+          </div>
+        </div>
+
+        <hr  />
+        <div class="row">
+          <div class="col-md-6" id="shop-box">
+            <img id="shop-item" src="https://eu.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-graceful-pm-monogram-canvas-handbags--M43700_PM2_Front%20view.jpg" alt="Clothing Item">
+            <h6>Bag</h6>
+            <p>$600</p>
+            <label>Quantity: </label><input id="louis-quantity" onchange="total()" value="1"/><br/><br />
+            <label>Sub-Total: </label><input id="louis-subtotal" value="600"/>
+          </div>
+          <div class="col-md-6" id="shop-box">
+            <img id="shop-item" src="https://cache.net-a-porter.com/images/products/741153/741153_in_pp.jpg" alt="Clothing Item">
+            <h6>Belt</h6>
+            <p>$450</p>
+            <label>Quantity: </label><input id="gucci-quantity" onchange="total()" value="1"/><br/><br />
+            <label>Sub-Total: </label><input id="gucci-subtotal" value="450"/>
+          </div>
+        </div>
+        <hr />
+
+
+        <div class="sidebar-container">
+
+
+      <form action="" method="get">
+        <label for="fname">Total (With Tax)</label>
+        <input type="text" id="total" name="total" onchange="total()" value="">
+      </form>
+
+	</div>
+
+  </div>
+
+  <br />
+  <br />
+
+  <!-- End main content -->
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

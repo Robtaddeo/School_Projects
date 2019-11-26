@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Assignment 6</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+
+  </head>
+<body>
+<center>
+  <h1>Assignment 6</h1>
+  <h3><a href="MadLibs.html">MadLibs</a></h3>
+</center>
+  <center>
+    <h1>Calculator:</h1>
+      <form method="get" attribute="get" action="php/add.php">
+        <p>Enter First Number:
+        <input type="number" step="any" id="first" name="first"></p>
+        <p>Enter Second Number:
+        <input type="number" step="any" id="second" name="second"></p>
+        <p>Choose an Operator:
+          <select name="operation">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">x</option>
+            <option value="divide">/</option>
+          </select>
+          </p>
+        <p></p>
+        <button type="submit" name="answer" id="answer" value="answer">Calculate</button>
+        <button type="reset" name="button">Reset</button>
+      </form>
+      <br />
+
+      <h1>Online Store form:</h1>
+        <form method="get" attribute="get" action="php/online.php">
+          <p>Enter Name:
+          <input type="text" id="name" name="name"></p>
+          <p>Enter Email:
+          <input type="email" id="email" name="email"></p>
+          <p>Product:
+            <select name="products">
+              <option value="Shirt">T-Shirt $59.99</option>
+              <option value="Pants">Pants $120.00</option>
+            </select><br /><br />
+            Quantity: <input type="number" id="quantity" name="quantity" value="1">
+            </p>
+          <p></p>
+          <button type="submit" name="answer" id="answer" value="answer">Order</button>
+          <button type="reset" name="button">Reset</button>
+        </form>
+    </center>
+
+    <h1>Quiz</h1>
+    <form method="get" attribute="get" action="php/quiz.php">
+      <h3>The Mitocondria is</h3> <br />
+      <hr style="width: 250px" /><br />
+      <div>
+        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+        <label for="question-1-answers-A">A) A famous basketball player </label>
+      </div>
+
+      <div>
+        <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
+        <label for="question-1-answers-B">B) A distant galaxy</label>
+      </div>
+
+      <div>
+        <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
+        <label for="question-1-answers-C">C) The powerhouse of the cell</label>
+      </div>
+
+      <div>
+        <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
+        <label for="question-1-answers-D">D) None of the above</label>
+      </div>
+
+      <br  />
+      <br />
+
+      <h3>What year did WW2 end?</h3>
+      <hr style="width: 250px" /><br />
+      <div>
+        <input type="radio" name="question-2-answers" id="question-2-answers-A" value="A" />
+        <label for="question-2-answers-A">A) 1936 </label>
+      </div>
+
+      <div>
+        <input type="radio" name="question-2-answers" id="question-2-answers-B" value="B" />
+        <label for="question-2-answers-B">B) 1945</label>
+      </div>
+
+      <div>
+        <input type="radio" name="question-2-answers" id="question-2-answers-C" value="C" />
+        <label for="question-2-answers-C">C) 1954 </label>
+      </div>
+
+      <div>
+        <input type="radio" name="question-2-answers" id="question-2-answers-D" value="D" />
+        <label for="question-2-answers-D">D) None of the above</label>
+      </div>
+
+      <br  />
+      <br  />
+
+      <h3>What programming languages can be used for Object Oriented Programming?</h3>
+      <hr style="width: 250px" /> <br />
+      <div>
+        <input type="radio" name="question-3-answers" id="question-3-answers-A" value="A" />
+        <label for="question-3-answers-A">A) Javascript </label>
+      </div>
+
+      <div>
+        <input type="radio" name="question-3-answers" id="question-3-answers-B" value="B" />
+        <label for="question-3-answers-B">B) Python</label>
+      </div>
+
+      <div>
+        <input type="radio" name="question-3-answers" id="question-3-answers-C" value="C" />
+        <label for="question-3-answers-C">C) Java </label>
+      </div>
+
+      <div>
+        <input type="radio" name="question-3-answers" id="question-3-answers-D" value="D" />
+        <label for="question-3-answers-D">D) All of the above</label>
+      </div>
+      <br  />
+      <button type="submit" name="submit" id="answer" value="answer">Submit</button>
+
+    </form>
+
+</body>
+</html>
